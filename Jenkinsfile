@@ -20,11 +20,6 @@ pipeline {
                    python3 -m pylint --fail-under=5 netman_netconf_obj2.py
                 '''
             }
-            post {
-                always {
-                    recordIssues(tools: [pyLint(pattern: '**/pylint.log')])
-                }
-            }
         }
 
         stage('Run Application') {
