@@ -43,7 +43,7 @@ pipeline {
         success {
             mail to: 'dheerajgajula.cse@gmail.com',
                  subject: "Jenkins Build SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                 body: "Build ${env.BUILD_URL} completed successfully."
+                 body: "Build ${env.BUILD_URL} completed successfully. "
         }
         failure {
             mail to: 'dheerajgajula.cse@gmail.com',
