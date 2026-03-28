@@ -17,7 +17,7 @@ pipeline {
         stage('Check PEP8 Style with Pylint') {
             steps {
                 sh '''
-                    pylint --fail-under=5 netman_netconf_obj2.py
+                   python3 -m pylint --fail-under=5 netman_netconf_obj2.py
                 '''
             }
             post {
