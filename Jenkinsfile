@@ -9,7 +9,7 @@ pipeline {
         stage('Install/Update Packages') {
             steps {
                 sh '''
-                    pip3 install ncclient pandas ipaddress netaddr prettytable pylint --break-system-packages
+                sh 'pip3 install ncclient pandas ipaddress netaddr prettytable pylint'
                 '''
             }
         }
