@@ -87,7 +87,8 @@ class TestNetworkConfig(unittest.TestCase):
         ssh = paramiko.SSHClient()
         ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh.connect(creds['host'], port=22,
-                    username=creds['username'], password=creds['password'])
+                    username=creds['username'], password=creds['password'],
+                    look_for_keys=False, allow_agent=False)
         shell = ssh.invoke_shell()
         shell.send('ping 10.1.5.1 source 10.1.2.1 repeat 4\n')
         import time
