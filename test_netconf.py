@@ -81,6 +81,7 @@ class TestNetworkConfig(unittest.TestCase):
     def test_ping_r2_loopback_to_r5_loopback(self):
         """Test 3: Verify ping from R2 loopback to R5 loopback is successful."""
         # R2 loopback: 10.1.2.1, R5 loopback: 10.1.5.1
+        # this comment is to trigger a change in the code for testing purposes, please ignore it
         # Use paramiko SSH CLI to run ping since IOS-XR NETCONF exec RPC
         # does not return a proper message-id in its reply
         creds = ROUTER_CREDENTIALS['R2']
