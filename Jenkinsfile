@@ -1,8 +1,14 @@
 pipeline {
     agent any
 
-    triggers {
+   triggers {
+        // 1. Listen for GitHub Webhooks (the Push trigger)
         githubPush()
+        
+        // 2. Run every hour (the Hourly trigger)
+        // 'H' picks a random minute in the hour to balance server load
+        cron('@midnight') // This will run the job every day at midnight
+        cron('H * * * *')
     }
 
     stages {
